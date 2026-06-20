@@ -246,12 +246,12 @@ const ManageProducts = () => {
           />
         </div>
         {error && (
-          <div className='text-sm bg-castello-red/50 border border-castello-red p-2 text-white'>
+          <div className='text-sm bg-castello-red/50 border border-castello-red p-2 text-white rounded-md'>
             {error}
           </div>
         )}
         {sucess && (
-          <div className='text-sm bg-green-600 border border-green-800 p-2 text-white'>
+          <div className='text-sm bg-green-600 border border-green-800 p-2 text-white rounded-md'>
             {sucess}
           </div>
         )}
