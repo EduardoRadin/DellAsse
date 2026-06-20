@@ -12,9 +12,12 @@ const ManageProducts = () => {
     category: 'Móveis', 
     imageUrl: ''
   });
-
+  const [error, setError] = useState('')
+  const [sucess, setSucess] = useState('')
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('')
+    setSucess('')
     setLoading(true);
     try {
       await productService.create({
@@ -22,11 +25,10 @@ const ManageProducts = () => {
         price: parseFloat(formData.price),
         stockQuantity: parseInt(formData.stockQuantity)
       });
-      alert('Produto cadastrado com sucesso!');
+      setSucess('Produto cadastrado com sucesso');
       setFormData({ name: '', description: '', price: '', stockQuantity: '', category: 'Móveis', imageUrl: '' });
     } catch (error) {
-      console.error(error);
-      alert('Erro ao cadastrar produto');
+      setError('Error ao cadastrar produto');
     } finally {
       setLoading(false);
     }
@@ -243,7 +245,16 @@ const ManageProducts = () => {
             onChange={e => setFormData({...formData, description: e.target.value})}
           />
         </div>
-
+        {error && (
+          <div className='text-sm bg-castello-red/50 border border-castello-red p-2 text-white'>
+            {error}
+          </div>
+        )}
+        {sucess && (
+          <div className='text-sm bg-green-600 border border-green-800 p-2 text-white'>
+            {sucess}
+          </div>
+        )}
         <button
           type="submit"
           disabled={loading}
