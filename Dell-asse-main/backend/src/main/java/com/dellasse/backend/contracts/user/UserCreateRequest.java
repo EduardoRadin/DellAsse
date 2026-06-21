@@ -1,6 +1,5 @@
 package com.dellasse.backend.contracts.user;
 
-import java.time.LocalDate;
 
 import com.dellasse.backend.validation.PasswordMatches;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -49,9 +48,7 @@ public record UserCreateRequest(
     @Size(min = 11, max = 15, message = "Phone must be between 11 and 15 characters")
     String phone,
 
-    @NotNull(message = "Birthday is required")
-    @Past(message = "Birthday must be in the past")
-    @JsonFormat(pattern = "dd-MM-yyyy")
-    LocalDate birthday
+    @NotBlank(message = "Birthday is required")
+    String birthday
 
 ) {}

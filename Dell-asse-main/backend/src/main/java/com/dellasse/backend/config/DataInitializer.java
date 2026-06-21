@@ -51,7 +51,7 @@ public class DataInitializer implements CommandLineRunner {
                 "teste@teste.com", 
                 "teste", 
                 passwordEncoder.encode("123456"),
-                LocalDate.of(2000, 1, 1),
+                "2000-1-1",
                 "49984008237",
                 true, 
                 List.of(roleRepository.findByName("BASIC")),

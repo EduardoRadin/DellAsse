@@ -10,7 +10,6 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import org.mapstruct.ap.shaded.freemarker.template.utility.NullArgumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -68,7 +67,6 @@ public class UserService {
      * @return Resposta HTTP indicando o resultado da operação.
      */
     public ResponseEntity<?> createUser(UserCreateRequest request, String token){
-
         if (userRepository.existsByUsername(request.username())) {
             throw new DomainException(DomainError.USER_ALREADY_EXISTS);
         }
@@ -77,6 +75,7 @@ public class UserService {
             throw new DomainException(DomainError.USER_ALREADY_EXISTS);
         }
         User user = UserMapper.toEntity(request);
+
         user.setPassword(passwordEncoder.encode(request.password()));
         defaultValues(user);
 
@@ -292,7 +291,7 @@ public class UserService {
      */
     public boolean isStaff(List<Role> roles){
         if (roles == null || roles.isEmpty()){
-            throw new NullArgumentException("Roles must contain at least one valid entry");
+            throw new IllegalArgumentException("Roles must contain at least one valid entry");
         }
 
         return roles.stream()

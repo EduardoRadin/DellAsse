@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-import java.time.LocalDate;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.List;
@@ -56,7 +55,7 @@ class UserServiceTest {
             "123456", 
             "123456", // CORREÇÃO: Adicionado confirmPassword
             "49999999999", // Telefone (11 dígitos)
-            LocalDate.of(2000, 1, 1) // Data no passado
+            "2000-01-01" // Data no passado
         );
         
         // Simula que não existe ninguém com esse user/email
@@ -81,9 +80,9 @@ class UserServiceTest {
             "lucas@email.com", 
             "lucasuser", 
             "123456", 
-            "123456", // CORREÇÃO: Adicionado confirmPassword
+            "123456",
             "49999999999", 
-            LocalDate.of(2000, 1, 1)
+            "2000-01-01"
         );
 
         when(userRepository.existsByUsername(request.username())).thenReturn(false);

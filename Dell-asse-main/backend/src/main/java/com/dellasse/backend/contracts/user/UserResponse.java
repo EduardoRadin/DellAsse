@@ -1,6 +1,5 @@
 package com.dellasse.backend.contracts.user;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
@@ -26,7 +25,7 @@ public record UserResponse(
     String email,
     String username,
     String phone,
-    LocalDate birthday,
+    String birthday,
     boolean active,
     List<Role> roles
 ) {}
