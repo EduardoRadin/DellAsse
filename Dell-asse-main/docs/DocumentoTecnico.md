@@ -23,14 +23,14 @@
 
 | Integrante | GitHub |
 |------------|--------|
-| Eduardo Radin Valer | [[RadinEduardo](https://github.com/EduardoRadin)] |
+| Eduardo Radin Valer | [[EduardoRadin](https://github.com/EduardoRadin)] |
 | Lucas Miron Bradacz | [[LucasBradacz](https://github.com/LucasBradacz)] |
-| Integrante 3 | [preencher] |
-| Integrante 4 | [preencher] |
-| Integrante 5 | [preencher] |
-| Integrante 6 | [preencher] |
-| Integrante 7 | [preencher] |
-| Integrante 8 | [preencher] |
+| Pedro Henrique Bender | [[PedroHBender](https://github.com/PedroHBender)] |
+| João Pedro Zilli | [[zilliJoao](https://github.com/zilliJoao)] |
+| Emilly Vani | [[Eminyx](https://github.com/Eminyx)] |
+| Nathan Ritter Wendling | [[WendlingNathan](https://github.com/WendlingNathan)] |
+| Eduardo Nofre | [[EduardoNofre007](https://github.com/EduardoNofre007)] |
+| Integrante 8 | [[marcoschons](https://github.com/marcoschons)] |
 
 ---
 
