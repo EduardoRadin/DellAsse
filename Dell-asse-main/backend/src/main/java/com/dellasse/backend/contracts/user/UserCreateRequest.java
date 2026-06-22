@@ -2,12 +2,9 @@ package com.dellasse.backend.contracts.user;
 
 
 import com.dellasse.backend.validation.PasswordMatches;
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
 /**

@@ -80,6 +80,8 @@ public class User {
         this.email = email;
         this.username = username;
         this.password = password;
+        this.phone = phone;
+        this.birthday = birthday;
     }  
 
     public boolean isLoginCorret(UserLoginRequest user, PasswordEncoder passwordEncoder){

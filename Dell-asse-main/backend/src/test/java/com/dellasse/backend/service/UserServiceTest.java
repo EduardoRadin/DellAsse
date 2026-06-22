@@ -55,7 +55,7 @@ class UserServiceTest {
             "123456", 
             "123456", // CORREÇÃO: Adicionado confirmPassword
             "49999999999", // Telefone (11 dígitos)
-            "2000-01-01" // Data no passado
+            "2000-01-01" // Data no formato ISO
         );
         
         // Simula que não existe ninguém com esse user/email

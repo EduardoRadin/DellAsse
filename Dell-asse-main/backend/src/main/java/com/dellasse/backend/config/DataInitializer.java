@@ -1,6 +1,5 @@
 package com.dellasse.backend.config;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -51,7 +50,7 @@ public class DataInitializer implements CommandLineRunner {
                 "teste@teste.com", 
                 "teste", 
                 passwordEncoder.encode("123456"),
-                "2000-1-1",
+                "2000-01-01",
                 "49984008237",
                 true, 
                 List.of(roleRepository.findByName("BASIC")),

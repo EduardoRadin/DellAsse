@@ -52,18 +52,7 @@ const Register = () => {
 
     setLoading(true);
 
-    let formattedDate = formData.birthday;
-    if (formData.birthday) {
-        const [year, month, day] = formData.birthday.split('-');
-        formattedDate = `${day}-${month}-${year}`;
-    }
-
-    const payload = {
-        ...formData,
-        birthday: formattedDate
-    };
-
-    const result = await register(payload);
+    const result = await register(formData);
 
     if (result.success) {
       setSuccess(true);
