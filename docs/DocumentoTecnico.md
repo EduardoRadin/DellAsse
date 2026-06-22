@@ -30,7 +30,7 @@
 | Emilly Vani | [[Eminyx](https://github.com/Eminyx)] |
 | Nathan Ritter Wendling | [[WendlingNathan](https://github.com/WendlingNathan)] |
 | Eduardo Nofre | [[EduardoNofre007](https://github.com/EduardoNofre007)] |
-| Integrante 8 | [[marcoschons](https://github.com/marcoschons)] |
+| Marco Schons | [[marcoschons](https://github.com/marcoschons)] |
 
 ---
 
