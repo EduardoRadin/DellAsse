@@ -41,62 +41,125 @@ Para ver os requisitos não funcionais e regras de negócio em detalhes, acesse 
 - **Linguagem:** Java  
 - **Framework:** Spring Boot   
 - **Banco de Dados:** PostgreSQL  
-- **Ferramentas:** Maven, Intellij
+- **Front-end:** React + Vite
+- **Ferramentas:** Maven, npm, IntelliJ/VS Code
 
-# Configuração do Ambiente
+## Como Inicializar o Projeto
 
-## Arquivo .env
+### Pré-requisitos
 
-### 1. Criar o arquivo .env
+Antes de iniciar, tenha instalado:
 
-Na raiz do projeto, crie um arquivo chamado `.env`:
+- **Java 21**
+- **Maven** ou use o Maven Wrapper já incluído no projeto
+- **Node.js** 18+ com **npm**
+- **PostgreSQL**
 
-```bash
-# Copie o arquivo de exemplo
-cp .env.example .env
+### 1. Configurar o banco de dados
+
+O back-end está configurado para acessar o PostgreSQL em:
+
+```properties
+jdbc:postgresql://localhost:5432/postgres
 ```
 
-### 2. Configurar as variáveis
+Se necessário, ajuste esse valor em `backend/src/main/resources/application.properties`.
 
-Edite o arquivo `.env` com suas configurações:
+### 2. Criar o arquivo `.env` do back-end
+
+Crie um arquivo chamado `.env` dentro da pasta `backend/` com as credenciais do PostgreSQL:
 
 ```env
-# Configurações do Banco de Dados
 DB_USERNAME=seu_usuario
 DB_PASSWORD=sua_senha
 ```
 
-### 3. Verificar a dependência
+Observações:
 
-**Maven** (`pom.xml`):
+- O arquivo deve ficar em `backend/.env`
+- Não commite esse arquivo no repositório
 
-```xml
-<dependency>
-    <groupId>io.github.cdimascio</groupId>
-    <artifactId>dotenv-java</artifactId>
-    <version>3.0.0</version>
-</dependency>
+### 3. Criar as tabelas do banco
+
+Execute o script abaixo no PostgreSQL:
+
+```text
+database/CriacaoDB.sql
 ```
 
-### 4. Usar no código
+Se quiser carregar dados iniciais de demonstração, execute também:
 
-```java
-import io.github.cdimascio.dotenv.Dotenv;
-
-public class Application {
-    public static void main(String[] args) {
-        Dotenv dotenv = Dotenv.load();
-
-        String dbUser = dotenv.get("DB_USERNAME");
-        String dbPassword = dotenv.get("DB_PASSWORD");
-
-        // Usar as variáveis na aplicação
-    }
-}
+```text
+database/SeedDados.sql
 ```
 
-### ⚠️ Importante
+### 4. Iniciar o back-end
 
-- **Nunca commite** o arquivo `.env` no repositório
-- O arquivo `.env` já está no `.gitignore`
-- Use o arquivo `.env.example` como referência
+No Windows, abra um terminal na pasta `backend/` e execute:
+
+```powershell
+.\mvnw.cmd spring-boot:run
+```
+
+Alternativamente, se estiver usando Maven instalado na máquina:
+
+```powershell
+mvn spring-boot:run
+```
+
+O back-end ficará disponível em:
+
+```text
+http://localhost:8080
+```
+
+### 5. Iniciar o front-end
+
+Abra outro terminal na pasta `frontend/` e execute:
+
+```powershell
+npm install
+npm run dev
+```
+
+O front-end ficará disponível em:
+
+```text
+http://localhost:3000
+```
+
+### 6. Acessar o sistema
+
+Após subir os dois lados da aplicação:
+
+- Front-end: `http://localhost:3000`
+- Back-end: `http://localhost:8080`
+
+Usuário de exemplo para testes:
+
+- **Usuário:** `teste`
+- **Senha:** `123456`
+
+
+## Execução Rápida
+
+Se o banco já estiver configurado, o fluxo mínimo é:
+
+```powershell
+# Terminal 1
+cd backend
+.\mvnw.cmd spring-boot:run
+
+# Terminal 2
+cd frontend
+npm install
+npm run dev
+```
+
+## Observações Importantes
+
+- O sistema depende do PostgreSQL ativo antes de subir o back-end
+- O arquivo `.env` deve conter `DB_USERNAME` e `DB_PASSWORD`
+- O front-end consome a API local do back-end
+- Se as tabelas já existirem, o back-end usa `ddl-auto=update` para atualizar a estrutura
+- Para utilizar o usuário teste com permissões de Administrador, basta alterar em `user_role` na base de dados o `role_id` para `1`
