@@ -326,36 +326,59 @@ A solução possui interface web funcional, organizada por páginas e componente
 
 ### 11.1 Tela inicial
 
-![Início]
+![Início](../screenshots/Inicio.jpeg)
 
-### 11.2 Galeria de decorações
+### 11.2 Tela inicial — versão atualizada
 
-![Galeria]
+![Início 2](../screenshots/Inicio%202.jpeg)
 
-### 11.3 Adicionar festa
+### 11.3 Avaliações dos clientes
 
-![Adicionar Festa]
+![Avaliações](../screenshots/Avaliacoes.jpeg)
 
-### 11.4 Carrinho
+### 11.4 Galeria de Inspirações
 
-![Carrinho]
+![Galeria](../screenshots/Galeria.jpeg)
 
-### 11.5 Painel administrativo
+### 11.5 Contato
 
-![Administrador]
+![Contato](../screenshots/Contato.jpeg)
 
-### 11.6 Visualização de solicitações
+### 11.6 Solicitar Festa Personalizada
 
-![Ver Solicitações]
+![Solicitar Festa Personalizada](../screenshots/Solicitar%20Festa%20Personalizada.jpeg)
 
-### 11.7 Apagar avaliação
+### 11.7 Carrinho
 
-![Apagar Avaliação]
+![Carrinho](../screenshots/Carrinho.jpeg)
 
-### 11.8 Base de dados
+### 11.8 Login
 
-![Base de Dados]
+![Login](../screenshots/Login.jpeg)
 
+### 11.9 Cadastro
+
+![Cadastro](../screenshots/Cadastro.jpeg)
+
+### 11.10 Painel do Administrador
+
+![Painel do Administrador](../screenshots/Painel%20do%20Administrador.jpeg)
+
+### 11.11 ADM — Ver Solicitações
+
+![Ver Solicitações](../screenshots/ADM%20-%20Ver%20Solicitacoes.jpeg)
+
+### 11.12 ADM — Visualizar Base de Dados
+
+![Base de Dados](../screenshots/ADM%20-%20Visualizar%20Base%20de%20Dados.jpeg)
+
+### 11.13 ADM — Cadastrar Produto
+
+![Cadastrar Produto](../screenshots/ADM%20-%20Cadastrar%20Produto.jpeg)
+
+### 11.14 ADM — Apagar Avaliação
+
+![Apagar Avaliação](../screenshots/ADM%20-%20Apagar%20Avaliacao.jpeg)
 ---
 
 ## 12. Explicação da API
